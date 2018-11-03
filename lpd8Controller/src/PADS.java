@@ -1,4 +1,4 @@
-package pLaunchController;
+package lpd8Controller;
 
 /**
  * The 8 pads of the controller.

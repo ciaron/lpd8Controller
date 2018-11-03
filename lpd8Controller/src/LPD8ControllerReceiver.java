@@ -1,4 +1,4 @@
-package pLaunchController;
+package lpd8Controller;
 
 import javax.sound.midi.MidiDevice;
 import javax.sound.midi.MidiMessage;
@@ -9,12 +9,12 @@ import javax.sound.midi.SysexMessage;
 /**
  * An implementation of @see javax.sound.midi.Receiver
  */
-class LaunchControllerReceiver implements Receiver {
+class LPD8ControllerReceiver implements Receiver {
 
-    private LaunchController parent;
+    private LPD8Controller parent;
     private MidiDevice device;
 
-    LaunchControllerReceiver(LaunchController parent, MidiDevice device) {
+    LPD8ControllerReceiver(LPD8Controller parent, MidiDevice device) {
         this.parent = parent;
         this.device = device;
     }
@@ -34,52 +34,28 @@ class LaunchControllerReceiver implements Receiver {
         if(lastMessage[0] == -72) { //KNOB
             switch(lastMessage[1]) {
                 case 21:
-                    parent.setKnobPosition(KNOBS.KNOB_1_HIGH,lastMessage[2]);
+                    parent.setKnobPosition(KNOBS.KNOB_1,lastMessage[2]);
                     break;
                 case 22:
-                    parent.setKnobPosition(KNOBS.KNOB_2_HIGH,lastMessage[2]);
+                    parent.setKnobPosition(KNOBS.KNOB_2,lastMessage[2]);
                     break;
                 case 23:
-                    parent.setKnobPosition(KNOBS.KNOB_3_HIGH,lastMessage[2]);
+                    parent.setKnobPosition(KNOBS.KNOB_3,lastMessage[2]);
                     break;
                 case 24:
-                    parent.setKnobPosition(KNOBS.KNOB_4_HIGH,lastMessage[2]);
+                    parent.setKnobPosition(KNOBS.KNOB_4,lastMessage[2]);
                     break;
                 case 25:
-                    parent.setKnobPosition(KNOBS.KNOB_5_HIGH,lastMessage[2]);
+                    parent.setKnobPosition(KNOBS.KNOB_5,lastMessage[2]);
                     break;
                 case 26:
-                    parent.setKnobPosition(KNOBS.KNOB_6_HIGH,lastMessage[2]);
+                    parent.setKnobPosition(KNOBS.KNOB_6,lastMessage[2]);
                     break;
                 case 27:
-                    parent.setKnobPosition(KNOBS.KNOB_7_HIGH,lastMessage[2]);
+                    parent.setKnobPosition(KNOBS.KNOB_7,lastMessage[2]);
                     break;
                 case 28:
-                    parent.setKnobPosition(KNOBS.KNOB_8_HIGH,lastMessage[2]);
-                    break;
-                case 41:
-                    parent.setKnobPosition(KNOBS.KNOB_1_LOW,lastMessage[2]);
-                    break;
-                case 42:
-                    parent.setKnobPosition(KNOBS.KNOB_2_LOW,lastMessage[2]);
-                    break;
-                case 43:
-                    parent.setKnobPosition(KNOBS.KNOB_3_LOW,lastMessage[2]);
-                    break;
-                case 44:
-                    parent.setKnobPosition(KNOBS.KNOB_4_LOW,lastMessage[2]);
-                    break;
-                case 45:
-                    parent.setKnobPosition(KNOBS.KNOB_5_LOW,lastMessage[2]);
-                    break;
-                case 46:
-                    parent.setKnobPosition(KNOBS.KNOB_6_LOW,lastMessage[2]);
-                    break;
-                case 47:
-                    parent.setKnobPosition(KNOBS.KNOB_7_LOW,lastMessage[2]);
-                    break;
-                case 48:
-                    parent.setKnobPosition(KNOBS.KNOB_8_LOW,lastMessage[2]);
+                    parent.setKnobPosition(KNOBS.KNOB_8,lastMessage[2]);
                     break;
             }
             return;

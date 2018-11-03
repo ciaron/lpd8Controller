@@ -1,12 +1,12 @@
-import template.library.*;
+import lpd8Controller.*;
 
-HelloLibrary hello;
+LPD8Controller hello;
 
 void setup() {
   size(400,400);
   smooth();
   
-  hello = new HelloLibrary(this);
+  hello = new LPD8Controller(this);
   
   PFont font = createFont("",40);
   textFont(font);
