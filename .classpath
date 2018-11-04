@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="/home/ciaron/processing-3.4/core/library/core.jar"/>
-	<classpathentry kind="lib" path="lpd8Controller/src/Knob.java"/>
-	<classpathentry kind="lib" path="lpd8Controller/src/KNOBS.java"/>
-	<classpathentry kind="lib" path="lpd8Controller/src/LedConstants.java"/>
-	<classpathentry kind="lib" path="lpd8Controller/src/LPD8Controller.java"/>
-	<classpathentry kind="lib" path="lpd8Controller/src/LPD8ControllerReceiver.java"/>
-	<classpathentry kind="lib" path="lpd8Controller/src/PADMODE.java"/>
-	<classpathentry kind="lib" path="lpd8Controller/src/PADS.java"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="output" path="resources/code"/>
 </classpath>
