@@ -7,5 +7,12 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="/home/ciaron/processing-3.4/core/library/core.jar"/>
+	<classpathentry kind="lib" path="lpd8Controller/src/Knob.java"/>
+	<classpathentry kind="lib" path="lpd8Controller/src/KNOBS.java"/>
+	<classpathentry kind="lib" path="lpd8Controller/src/LedConstants.java"/>
+	<classpathentry kind="lib" path="lpd8Controller/src/LPD8Controller.java"/>
+	<classpathentry kind="lib" path="lpd8Controller/src/LPD8ControllerReceiver.java"/>
+	<classpathentry kind="lib" path="lpd8Controller/src/PADMODE.java"/>
+	<classpathentry kind="lib" path="lpd8Controller/src/PADS.java"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
