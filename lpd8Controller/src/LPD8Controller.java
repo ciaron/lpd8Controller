@@ -52,7 +52,7 @@ public class LPD8Controller {
     private boolean[] padStatus = new boolean[8];
 
     PApplet parent;
-
+    
     /***
      * Returns the {@link Knob} object for one of the knobs in the controller.
      * @param knob
@@ -87,11 +87,11 @@ public class LPD8Controller {
         }
     }
 
-
     public LPD8Controller(PApplet parent) throws MidiUnavailableException {
         this.parent = parent;
+    	
         for (int i = 0, l = KNOBS.values().length; i < l; i++) {
-            knobValues[i] = new Knob(i,parent);
+            knobValues[i] = new Knob(i, parent);
         }
         infos = MidiSystem.getMidiDeviceInfo();
         for (MidiDevice.Info info : infos) {

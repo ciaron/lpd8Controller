@@ -12,7 +12,7 @@ public enum KNOBS {
     KNOB_5(4),
     KNOB_6(5),
     KNOB_7(6),
-    KNOB_8(7),
+    KNOB_8(7);
 
     private final byte code;
     public byte code() { return code; }

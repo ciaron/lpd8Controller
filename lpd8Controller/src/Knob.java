@@ -145,7 +145,7 @@ public class Knob {
         try {
             return parent.getClass().getDeclaredField(fieldName);
         } catch (Exception e) {
-            throw new IllegalArgumentException("LaunchController Error: variable not found in the sketch: " + fieldName + ".");
+            throw new IllegalArgumentException("LPD8Controller Error: variable not found in the sketch: " + fieldName + ".");
         }
 
     }
@@ -162,7 +162,7 @@ public class Knob {
             field.setFloat(parent, value);
         }
         catch (IllegalAccessException e) {
-            System.err.println(String.format("LaunchController Error: It was not possible to set the value of the variable %s. Error message: %s", fieldName, e.getMessage()));
+            System.err.println(String.format("LPD8Controller Error: It was not possible to set the value of the variable %s. Error message: %s", fieldName, e.getMessage()));
         }
 
     }
