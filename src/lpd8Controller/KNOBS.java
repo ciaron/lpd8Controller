@@ -1,8 +1,7 @@
 package lpd8Controller;
 
 /**
- * The 16 knobs of the controller. Knobs from the upper row are named KNOB_x_HIGH, where x goes
- * from 1 to 8, as labelled on the controller.
+ * The 8 knobs of the controller. Knobs are as labelled on the controller.
  */
 public enum KNOBS {
     KNOB_1(0),

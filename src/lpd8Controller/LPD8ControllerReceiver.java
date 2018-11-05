@@ -30,31 +30,32 @@ class LPD8ControllerReceiver implements Receiver {
     @Override
     public void send(MidiMessage message, long timeStamp) {
         lastMessage = message.getMessage();
+        System.out.println(lastMessage[2]);
         //System.out.println(message.getMessage());
-        if(lastMessage[0] == -72) { //KNOB
+        if(lastMessage[0] == -80) { //KNOB
             switch(lastMessage[1]) {
-                case 21:
+                case 11:
                     parent.setKnobPosition(KNOBS.KNOB_1,lastMessage[2]);
                     break;
-                case 22:
+                case 12:
                     parent.setKnobPosition(KNOBS.KNOB_2,lastMessage[2]);
                     break;
-                case 23:
+                case 13:
                     parent.setKnobPosition(KNOBS.KNOB_3,lastMessage[2]);
                     break;
-                case 24:
+                case 14:
                     parent.setKnobPosition(KNOBS.KNOB_4,lastMessage[2]);
                     break;
-                case 25:
+                case 15:
                     parent.setKnobPosition(KNOBS.KNOB_5,lastMessage[2]);
                     break;
-                case 26:
+                case 16:
                     parent.setKnobPosition(KNOBS.KNOB_6,lastMessage[2]);
                     break;
-                case 27:
+                case 17:
                     parent.setKnobPosition(KNOBS.KNOB_7,lastMessage[2]);
                     break;
-                case 28:
+                case 18:
                     parent.setKnobPosition(KNOBS.KNOB_8,lastMessage[2]);
                     break;
             }

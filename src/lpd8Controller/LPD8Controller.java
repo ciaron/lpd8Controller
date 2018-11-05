@@ -95,7 +95,8 @@ public class LPD8Controller {
         }
         infos = MidiSystem.getMidiDeviceInfo();
         for (MidiDevice.Info info : infos) {
-            if (info.getName().equals("LPD8")) {
+        	//println("device:", info.getName());
+            if (info.getName().startsWith("LPD8")) {
                 MidiDevice device = MidiSystem.getMidiDevice(info);
                 if (info.getClass().getName().equals("com.sun.media.sound.MidiInDeviceProvider$MidiInDeviceInfo")) {
                     deviceIn = device;
