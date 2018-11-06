@@ -30,8 +30,11 @@ class LPD8ControllerReceiver implements Receiver {
     @Override
     public void send(MidiMessage message, long timeStamp) {
         lastMessage = message.getMessage();
-        System.out.println(lastMessage[2]);
+        System.out.println("0: " + lastMessage[0]);
+        System.out.println("1: " + lastMessage[1]);
+        System.out.println("2: " + lastMessage[2]);
         //System.out.println(message.getMessage());
+        
         if(lastMessage[0] == -80) { //KNOB
             switch(lastMessage[1]) {
                 case 11:
@@ -61,44 +64,60 @@ class LPD8ControllerReceiver implements Receiver {
             }
             return;
         }
-        else if (lastMessage[0] == -104 ||lastMessage[0] == -120 ) { //PAD
-            PADS padToChange = null;
+        //else if (lastMessage[0] == -104 ||lastMessage[0] == -120 ) { //PAD
+        // -111 and -127 to toggle on/off when in toggle (not momentary) mode.
+        // -80 when pad mode set to CC, param [1] is then 1..8 depending on pad
+        /* PROG CHNG, then pad hit causes:
+         * java.lang.ArrayIndexOutOfBoundsException: 2
+			at lpd8Controller.LPD8ControllerReceiver.send(Unknown Source)
+			at com.sun.media.sound.AbstractMidiDevice$TransmitterList.sendMessage(AbstractMidiDevice.java:679)
+			at com.sun.media.sound.MidiInDevice.callbackShortMessage(MidiInDevice.java:172)
+			at com.sun.media.sound.MidiInDevice.nGetMessages(Native Method)
+			at com.sun.media.sound.MidiInDevice.run(MidiInDevice.java:140)
+			at java.lang.Thread.run(Thread.java:748)
+         */
+        
+        else if (lastMessage[0] == -112 ||lastMessage[0] == -128 ) { //PAD
+        	System.out.println("1: " + lastMessage[1]);
+        	System.out.println("2: " + lastMessage[2]);
+
+        	PADS padToChange = null;
             switch(lastMessage[1]){
-                case 9:
+                case 36:
                     if(lastMessage[2]==127)
                         padToChange = PADS.PAD_1;
                     break;
-                case 10:
+                case 37:
                     if(lastMessage[2]==127) {
                         padToChange = PADS.PAD_2;
                     }
                     break;
-                case 11:
+                case 38:
                     if(lastMessage[2]==127) {
                         padToChange = PADS.PAD_3;
                     }
                     break;
-                case 12:
+                case 39:
                     if(lastMessage[2]==127) {
                         padToChange = PADS.PAD_4;
                     }
                     break;
-                case 25:
+                case 40:
                     if(lastMessage[2]==127) {
                         padToChange = PADS.PAD_5;
                     }
                     break;
-                case 26:
+                case 41:
                     if(lastMessage[2]==127) {
                         padToChange = PADS.PAD_6;
                     }
                     break;
-                case 27:
+                case 42:
                     if(lastMessage[2]==127) {
                         padToChange = PADS.PAD_7;
                     }
                     break;
-                case 28:
+                case 43:
                     if(lastMessage[2]==127) {
                         padToChange = PADS.PAD_8;
                     }
