@@ -5,35 +5,35 @@ package lpd8Controller;
  */
 public enum PADS {
     /**
-     * The first pad from left to right.
+     * The first pad from left to right, bottom row
      */
     PAD_1(0),
     /**
-     * The second pad from left to right.
+     * The second pad from left to right, bottom row
      */
     PAD_2(1),
     /**
-     * The third pad from left to right.
+     * The third pad from left to right, bottom row
      */
     PAD_3(2),
     /**
-     * The fourth pad from left to right.
+     * The fourth pad from left to right, bottom row
      */
     PAD_4(3),
     /**
-     * The fifth pad from left to right.
+     * The first pad from left to right, top row
      */
     PAD_5(4),
     /**
-     * The sixth pad from left to right.
+     * The second pad from left to right, top row
      */
     PAD_6(5),
     /**
-     * The seventh pad from left to right.
+     * The third pad from left to right, top row
      */
     PAD_7(6),
     /**
-     * The eighth pad from left to right.
+     * The fourth pad from left to right, top row
      */
     PAD_8(7);
 
