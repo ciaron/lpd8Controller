@@ -30,9 +30,9 @@ class LPD8ControllerReceiver implements Receiver {
     @Override
     public void send(MidiMessage message, long timeStamp) {
         lastMessage = message.getMessage();
-        System.out.println("0: " + lastMessage[0]);
-        System.out.println("1: " + lastMessage[1]);
-        System.out.println("2: " + lastMessage[2]);
+        //System.out.println("0: " + lastMessage[0]);
+        //System.out.println("1: " + lastMessage[1]);
+        //System.out.println("2: " + lastMessage[2]);
         //System.out.println(message.getMessage());
         
         if(lastMessage[0] == -80) { //KNOB
@@ -78,8 +78,8 @@ class LPD8ControllerReceiver implements Receiver {
          */
         
         else if (lastMessage[0] == -112 ||lastMessage[0] == -128 ) { //PAD
-        	System.out.println("1: " + lastMessage[1]);
-        	System.out.println("2: " + lastMessage[2]);
+        	//System.out.println("1: " + lastMessage[1]);
+        	//System.out.println("2: " + lastMessage[2]);
 
         	PADS padToChange = null;
             switch(lastMessage[1]){
